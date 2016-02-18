@@ -12,19 +12,31 @@
       <h1>Reddit Clone</h1>
       <input type="submit" value='Submit post' ng-click='showForm=true'>
       <div ng-show='showForm'>
-        <form>
+        <form ng-submit='submitPost()'>
           <label>Title</label>
-          <input type="text" placeholder="Title">
+          <input type="text" ng-model='title' placeholder="Title">
           <label>Author</label>
-          <input type="text" placeholder='Author'>
+          <input type="text" ng-model='author' placeholder='Author'>
           <label>Image URL</label>
-          <input type="text" placeholder='Picture'>
+          <input type="text" ng-model='url' placeholder='Picture'>
           <label>Description</label>
-          <input type="text" placeholder="Talk about it">
+          <input type="text" ng-model='description' placeholder="Talk about it">
           <button type=submit ng-click='showForm=false'>Submit post</button>
 
         </form>
 
+      </div>
+      <div ng-repeat='post in posts'>
+        <p>
+          {{post.title}}
+        </p>
+        <p>
+          {{post.author}}
+        </p>
+        <img src="{{post.url}}" alt="">
+        <p>
+          {{post.description}}
+        </p>
       </div>
 
   </body>
