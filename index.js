@@ -9,5 +9,9 @@ app.controller('control', function($scope){
     post.url = $scope.url;
     post.description = $scope.description;
     $scope.posts.push(post);
+    $scope.title = null;
+    $scope.author = null;
+    $scope.url = null;
+    $scope.description = null;
   }
 })
