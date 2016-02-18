@@ -8,6 +8,24 @@
     <script type="text/javascript" src='index.js'></script>
   </head>
   <body ng-controller='control'>
+    <nav>
+      <h1>Reddit Clone</h1>
+      <input type="submit" value='Submit post' ng-click='showForm=true'>
+      <div ng-show='showForm'>
+        <form>
+          <label>Title</label>
+          <input type="text" placeholder="Title">
+          <label>Author</label>
+          <input type="text" placeholder='Author'>
+          <label>Image URL</label>
+          <input type="text" placeholder='Picture'>
+          <label>Description</label>
+          <input type="text" placeholder="Talk about it">
+          <button type=submit ng-click='showForm=false'>Submit post</button>
+
+        </form>
+
+      </div>
 
   </body>
 </html>
