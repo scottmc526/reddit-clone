@@ -4,6 +4,7 @@ app.controller('control', function($scope){
   $scope.posts = [];
   $scope.submitPost = function(){
     var post = {};
+    post.upvote = 0
     post.title = $scope.title;
     post.author = $scope.author;
     post.url = $scope.url;

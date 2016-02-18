@@ -37,6 +37,11 @@
         <p>
           {{post.description}}
         </p>
+        <button type="submit" ng-click='post.upvote= post.upvote + 1'>Upvote</button>
+        <button type="submit" ng-click='post.upvote= post.upvote - 1'>Downvote</button>
+        <p>
+          {{post.upvote | number}}
+        </p>
       </div>
 
   </body>
