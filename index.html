@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Reddit Clone</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js'>
     </script>
     <script type="text/javascript" src='index.js'></script>
@@ -37,8 +38,8 @@
         <p>
           {{post.description}}
         </p>
-        <button type="submit" ng-click='post.upvote= post.upvote + 1'>Upvote</button>
-        <button type="submit" ng-click='post.upvote= post.upvote - 1'>Downvote</button>
+        <i ng-click='post.upvote = post.upvote + 1' class="fa fa-hand-o-up"></i>
+        <i ng-click='post.upvote = post.upvote - 1' class="fa fa-hand-o-down"></i>
         <p>
           {{post.upvote | number}}
         </p>
