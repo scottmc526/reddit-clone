@@ -16,5 +16,8 @@ app.controller('control', function($scope){
     $scope.url = null;
     $scope.description = null;
   }
+  $scope.toggle = function(){
+    $scope.showForm = !$scope.showForm
+  }
 
 })

@@ -3,15 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Reddit Clone</title>
+    <link rel='stylesheet' href='index.css'>
+    <link href='https://fonts.googleapis.com/css?family=Archivo+Narrow' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js'>
     </script>
     <script type="text/javascript" src='index.js'></script>
   </head>
   <body ng-controller='control'>
-    <nav>
-      <h1>Reddit Clone</h1>
-      <input type="submit" value='Submit post' ng-click='showForm=true'>
+    <div class='nav'>
+      <h1 class='title'>Reddit Clone</h1>
+      <i class="fa fa-reddit-alien" ng-click='toggle()'>  Submit New Post</i>
+    </div>
       <div ng-show='showForm'>
         <form name='form' ng-submit='submitPost()'>
           <label>Title</label>
@@ -22,7 +26,7 @@
           <input type="text" ng-required='true' ng-model='url' placeholder='Picture'>
           <label>Description</label>
           <input type="text" ng-required='true' ng-model='description' placeholder="Talk about it">
-          <button type=submit ng-click='showForm=false' ng-disabled='form.$invalid'>Submit post</button>
+          <button type=submit ng-click='toggle()' ng-disabled='form.$invalid'>Submit post</button>
 
         </form>
 
