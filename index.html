@@ -17,16 +17,16 @@
       <i class="fa fa-reddit-alien" ng-click='toggle()'>  Submit New Post</i>
     </div>
       <div ng-show='showForm'>
-        <form name='form' ng-submit='submitPost()'>
-          <label>Title</label>
-          <input type="text" ng-required='true' ng-model='title' placeholder="Title">
-          <label>Author</label>
-          <input type="text" ng-required='true' ng-model='author' placeholder='Author'>
-          <label>Image URL</label>
-          <input type="text" ng-required='true' ng-model='url' placeholder='Picture'>
-          <label>Description</label>
-          <input type="text" ng-required='true' ng-model='description' placeholder="Talk about it">
-          <button type=submit ng-click='toggle()' ng-disabled='form.$invalid'>Submit post</button>
+        <form name='form' ng-submit='submitPost()' class='newPost'>
+          <label class='new'>Title</label>
+          <input class='newField' type="text" ng-required='true' ng-model='title' placeholder="Title">
+          <label class='new'>Author</label>
+          <input class='newField' type="text" ng-required='true' ng-model='author' placeholder='Author'>
+          <label class='new'>Image URL</label>
+          <input class='newField' type="text" ng-required='true' ng-model='url' placeholder='Picture'>
+          <label class='new'>Description</label>
+          <input class='newField' type="text" ng-required='true' ng-model='description' placeholder="Talk about it">
+          <button class='newField newButton' type=submit ng-click='toggle()' ng-disabled='form.$invalid'>Submit post</button>
 
         </form>
 

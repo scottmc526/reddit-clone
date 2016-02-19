@@ -15,3 +15,23 @@
   margin-right: 60%;
   margin-bottom: 1%;
 }
+.newPost {
+  display: flex;
+  flex-direction: column;
+}
+
+.new {
+  font-family: 'Archivo Narrow', sans-serif;
+  margin: .5%;
+}
+
+.newField {
+  margin: .5%;
+  border-radius: 3px;
+}
+.newButton {
+  color: #ff4500;
+  background-color: #cee3f8;
+  border: none;
+  border: 1px solid black;
+}
