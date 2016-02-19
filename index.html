@@ -31,26 +31,49 @@
         </form>
 
       </div>
-      <div ng-repeat="post in posts | orderBy:'-upvote'">
-        <p>
-          {{post.title}}
-        </p>
-        <p>
-          {{post.author}}
-        </p>
-        <img src="{{post.url}}" alt="">
-        <p>
-          {{post.description}}
-        </p>
-        <p>
-          {{post.date | date:'medium'}}
-        </p>
-        <i ng-click='post.upvote = post.upvote + 1' class="fa fa-hand-o-up"></i>
-        <i ng-click='post.upvote = post.upvote - 1' class="fa fa-hand-o-down"></i>
-        <p>
-          {{post.upvote | number}}
-        </p>
-      </div>
+      <div class='post' ng-repeat="post in posts | orderBy:'-upvote'">
+        <img class='postPic' src="{{post.url}}" alt="">
+        <div class='title_author'>
+          <p class='postTitle'>
+            {{post.title}}
+          </p>
+          <p>
+            By: {{post.author}}
+          </p>
+        </div>
+        <div class='description'>
+          <p>
+            {{post.description}}
+          </p>
+        </div>
+        <div class="date_upvote">
+          <p>
+            {{post.date | date:'medium'}}
+          </p>
+          <i ng-click='post.upvote = post.upvote + 1' id='hand' class="fa fa-hand-o-up"></i>
+          <i ng-click='post.upvote = post.upvote - 1' id='hand' class="fa fa-hand-o-down"></i>
+          <p>
+            {{post.upvote | number}}
+          </p>
+          <i ng-click='toggleComments()' id='hand' class="fa fa-comment"> Add Comment</i>
 
+        </div>
+        <div ng-controller='comments'>
+        <div ng-show='showComments'>
+          <form ng-submit= 'submitComment()'>
+            <input type='text' ng-model='name' placeholder="Enter your name">
+            <textarea ng-model='comment' rows="8" cols="40" placeholder='Enter comment'></textarea>
+            <button type='submit' ng-click='toggleComments()'>Submit Comment</button>
+          </form>
+        </div>
+        <div class='post' ng-repeat="comment in comments">
+
+          <p>
+            {{comment.name}}
+            {{comment.comment}}
+          </p>
+        </div>
+        </div>
+    </div>
   </body>
 </html>
