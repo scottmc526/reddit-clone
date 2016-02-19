@@ -27,7 +27,7 @@
         </form>
 
       </div>
-      <div ng-repeat='post in posts'>
+      <div ng-repeat="post in posts | orderBy:'-upvote'">
         <p>
           {{post.title}}
         </p>
