@@ -4,6 +4,7 @@ app.controller('control', function($scope){
   $scope.posts = [];
   $scope.submitPost = function(){
     var post = {};
+    post.date = Date.now()
     post.upvote = 0
     post.title = $scope.title;
     post.author = $scope.author;
@@ -15,4 +16,5 @@ app.controller('control', function($scope){
     $scope.url = null;
     $scope.description = null;
   }
+
 })

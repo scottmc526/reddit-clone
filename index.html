@@ -13,16 +13,16 @@
       <h1>Reddit Clone</h1>
       <input type="submit" value='Submit post' ng-click='showForm=true'>
       <div ng-show='showForm'>
-        <form ng-submit='submitPost()'>
+        <form name='form' ng-submit='submitPost()'>
           <label>Title</label>
-          <input type="text" ng-model='title' placeholder="Title">
+          <input type="text" ng-required='true' ng-model='title' placeholder="Title">
           <label>Author</label>
-          <input type="text" ng-model='author' placeholder='Author'>
+          <input type="text" ng-required='true' ng-model='author' placeholder='Author'>
           <label>Image URL</label>
-          <input type="text" ng-model='url' placeholder='Picture'>
+          <input type="text" ng-required='true' ng-model='url' placeholder='Picture'>
           <label>Description</label>
-          <input type="text" ng-model='description' placeholder="Talk about it">
-          <button type=submit ng-click='showForm=false'>Submit post</button>
+          <input type="text" ng-required='true' ng-model='description' placeholder="Talk about it">
+          <button type=submit ng-click='showForm=false' ng-disabled='form.$invalid'>Submit post</button>
 
         </form>
 
@@ -37,6 +37,9 @@
         <img src="{{post.url}}" alt="">
         <p>
           {{post.description}}
+        </p>
+        <p>
+          {{post.date | date:'medium'}}
         </p>
         <i ng-click='post.upvote = post.upvote + 1' class="fa fa-hand-o-up"></i>
         <i ng-click='post.upvote = post.upvote - 1' class="fa fa-hand-o-down"></i>
