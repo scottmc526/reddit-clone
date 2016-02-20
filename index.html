@@ -16,15 +16,17 @@
   </head>
   <body ng-controller='control'>
     <div class='nav'>
-      <div class='col-md-4'>
-        <h1 class='title'>Reddit Clone</h1>
-      </div>
-      <div class=col-md-8>
-        <i class="fa fa-reddit-alien" ng-click='toggle()'>  Submit New Post</i>
+      <div class='container'>
+        <div class='pull-left'>
+          <h1>Reddit Clone</h1>
+        </div>
+        <div class='pull-right'>
+          <i class="fa fa-reddit-alien" ng-click='toggle()'>  Submit New Post</i>
+        </div>
       </div>
     </div>
 
-    
+  <div class="wrapper">
     <div ng-show='showForm'>
       <form name='form' ng-submit='submitPost()' class='newPost'>
         <label class='new'>Title</label>
@@ -86,6 +88,7 @@
 
 
     </div>
+  </div>
   </body>
 </html>
 

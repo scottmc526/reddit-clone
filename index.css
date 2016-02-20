@@ -1,19 +1,15 @@
 .nav {
   height: 10vh;
   width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;;
   background-color: #cee3f8;
 }
-.title {
+
+.nav h1 {
   font-family: 'Archivo Narrow', sans-serif;
 }
 
 .fa {
-  align-self: flex-end;
-  margin-right: 60%;
-  margin-bottom: 1%;
+  margin-top: 40px;
 }
 .newPost {
   display: flex;
