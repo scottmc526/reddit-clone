@@ -55,25 +55,35 @@
           <p>
             {{post.upvote | number}}
           </p>
-          <i ng-click='toggleComments()' id='hand' class="fa fa-comment"> Add Comment</i>
-
+          <i id='hand' ng-click='newComment(post, comment)' class="fa fa-comment"> Show Comments</i>
+          <i ng-click='toggleComments(post)' id='hand' class="fa fa-pencil">Add Comment</i>
         </div>
-        <div ng-controller='comments'>
-        <div ng-show='showComments'>
-          <form ng-submit= 'submitComment()'>
-            <input type='text' ng-model='name' placeholder="Enter your name">
+        <div ng-show='post.showCommentForm'>
+          <form ng-submit= 'addComment(post, comment)'>
+            <!-- <input type='text' ng-model='name' placeholder="Enter your name"> -->
             <textarea ng-model='comment' rows="8" cols="40" placeholder='Enter comment'></textarea>
-            <button type='submit' ng-click='toggleComments()'>Submit Comment</button>
+            <input type='submit' ng-click='toggleComments(post)' value='submit comment'>
           </form>
         </div>
-        <div class='post' ng-repeat="comment in comments">
+        <div ng-show='post.showComments'>
+        <div ng-repeat='comment in post.comments'>
+            <p>
+              <!-- {{comment.name}} -->
+              {{comment}}
+            </p>
 
-          <p>
-            {{comment.name}}
-            {{comment.comment}}
-          </p>
+          </div>
         </div>
-        </div>
+
+
     </div>
   </body>
 </html>
+
+<!-- <div ng-controller='comments'>
+<div ng-repeat="comment in comments">
+<div ng-show='showComments'>
+
+</div>
+</div>
+</div> -->
