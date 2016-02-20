@@ -28,26 +28,13 @@ app.controller('control', function($scope){
     $scope.description = null;
     post.showCommentForm = false;
     post.showComments = false;
-    console.log(post)
 
   }
   $scope.toggle = function(){
     $scope.showForm = !$scope.showForm
   }
   $scope.addComment = function(post, comment){
-    console.log(post);
-    console.log('comment is ' + comment);
     // post.comments.comment = $scope.comment;
     post.comments.push(comment)
-  }
-})
-
-app.controller('comments', function($scope){
-  $scope.comments = []
-  $scope.submitComment = function(){
-    var comment = {};
-    comment.name = $scope.name;
-    comment.comment = $scope.comment;
-    $scope.comments.push(comment)
   }
 })

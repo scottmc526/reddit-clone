@@ -55,8 +55,8 @@
           <p>
             {{post.upvote | number}}
           </p>
-          <i id='hand' ng-click='newComment(post, comment)' class="fa fa-comment"> Show Comments</i>
-          <i ng-click='toggleComments(post)' id='hand' class="fa fa-pencil">Add Comment</i>
+          <i id='hand' ng-click='newComment(post, comment)' class="fa fa-comment"></i>
+          <i ng-click='toggleComments(post)' id='hand' class="fa fa-pencil"></i>
         </div>
         <div ng-show='post.showCommentForm'>
           <form ng-submit= 'addComment(post, comment)'>
