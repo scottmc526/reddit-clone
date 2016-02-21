@@ -10,6 +10,7 @@
 
 .fa {
   margin-top: 40px;
+  cursor: pointer;
 }
 .newPost {
   display: flex;
@@ -24,6 +25,7 @@
 }
 
 .newField {
+  width: 55%;
   margin: .5%;
   border-radius: 3px;
 }

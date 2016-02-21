@@ -4,6 +4,7 @@ var app = angular.module('scott', []);
 app.controller('control', function($scope){
   $scope.showForm = false;
   $scope.posts = [];
+  $scope.sorter = '-upvote'
 
   $scope.toggleComments = function(post) {
     post.showCommentForm = !post.showCommentForm
@@ -28,6 +29,7 @@ app.controller('control', function($scope){
     $scope.description = null;
     post.showCommentForm = false;
     post.showComments = false;
+
 
   }
   $scope.toggle = function(){
