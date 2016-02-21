@@ -15,6 +15,7 @@
     <script type="text/javascript" src='index.js'></script>
   </head>
   <body ng-controller='control'>
+
     <div class='nav'>
       <div class='container'>
         <div class='pull-left'>
@@ -25,22 +26,22 @@
         </div>
       </div>
     </div>
-
-  <div class="wrapper">
     <div ng-show='showForm'>
-      <form name='form' ng-submit='submitPost()' class='newPost'>
-        <label class='new'>Title</label>
-        <input class='newField' type="text" ng-required='true' ng-model='title' placeholder="Title">
-        <label class='new'>Author</label>
-        <input class='newField' type="text" ng-required='true' ng-model='author' placeholder='Author'>
-        <label class='new'>Image URL</label>
-        <input class='newField' type="text" ng-required='true' ng-model='url' placeholder='Picture'>
-        <label class='new'>Description</label>
-        <input class='newField' type="text" ng-required='true' ng-model='description' placeholder="Talk about it">
-        <button class='newField newButton' type=submit ng-click='toggle()' ng-disabled='form.$invalid'>Submit post</button>
+      <div class='container'>
+        <form name='form' ng-submit='submitPost()' class='newPost'>
+          <label class='new'>Title</label>
+          <input class='newField' type="text" ng-required='true' ng-model='title' placeholder="Title">
+          <label class='new'>Author</label>
+          <input class='newField' type="text" ng-required='true' ng-model='author' placeholder='Author'>
+          <label class='new'>Image URL</label>
+          <input class='newField' type="text" ng-required='true' ng-model='url' placeholder='Picture'>
+          <label class='new'>Description</label>
+          <input class='newField' type="text" ng-required='true' ng-model='description' placeholder="Talk about it">
+          <button class='newField newButton' type=submit ng-click='toggle()' ng-disabled='form.$invalid'>Submit post</button>
 
-      </form>
+        </form>
 
+      </div>
     </div>
     <div class='post' ng-repeat="post in posts | orderBy:'-upvote'">
       <img class='postPic' src="{{post.url}}" alt="">
@@ -88,7 +89,6 @@
 
 
     </div>
-  </div>
   </body>
 </html>
 
