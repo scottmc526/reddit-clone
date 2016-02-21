@@ -1,6 +1,6 @@
-//'[ngAnimate]'
 
-var app = angular.module('scott', []);
+
+var app = angular.module('scott', ['ngAnimate']);
 app.controller('control', function($scope){
   $scope.showForm = false;
   $scope.posts = [];
@@ -58,6 +58,6 @@ app.controller('control', function($scope){
       $scope.color = 'red'
     } else {
      $scope.color = 'black'
-    }  
+    }
   }
 })
