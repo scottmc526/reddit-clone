@@ -54,20 +54,27 @@
           </p>
         </div>
         <div class='col-md-8'>
-          <p class='postTitle'>
-            {{post.title}} |   {{post.upvote | number}}
-            <i ng-click='post.upvote = post.upvote + 1' id='hand' class="fa fa-hand-o-up"></i>
-            <i ng-click='post.upvote = post.upvote - 1' id='hand' class="fa fa-hand-o-down"></i>
-          </p>
-          <p>
+            <p class='postTitle'>
+              {{post.title }} | <span style='color:{{color}}'>{{post.upvote | number}} </span>
+              <i ng-click='addVote(post)' id='hand' class="fa fa-hand-o-up"></i>
+              <i ng-click='subtractVote(post)' id='hand' class="fa fa-hand-o-down"></i>
+            </p>
+          <p class='description'>
             {{post.description}}
           </p>
+          <div ng-show='post.showComments'>
+            <div ng-repeat='comment in post.comments'>
+              <p>
+                {{comment}}
+              </p>
+
+            </div>
+          </div>
         </div>
-        <div class='col-md-2'>
+      <div class='col-md-2'>
           <p>
             By: {{post.author}}
           </p>
-        </div>
         <div class="date_upvote">
           <i id='hand' ng-click='newComment(post, comment)' class="fa fa-comment"></i>
           <i ng-click='toggleComments(post)' id='hand' class="fa fa-pencil"></i>
@@ -80,15 +87,8 @@
           <input type='submit' ng-click='toggleComments(post)' value='submit comment'>
         </form>
       </div>
-      <div ng-show='post.showComments'>
-      <div ng-repeat='comment in post.comments'>
-        <p>
-          <!-- {{comment.name}} -->
-          {{comment}}
-        </p>
-
       </div>
-      </div>
+    </div>
 
 
     </div>

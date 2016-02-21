@@ -4,7 +4,7 @@ var app = angular.module('scott', []);
 app.controller('control', function($scope){
   $scope.showForm = false;
   $scope.posts = [];
-  $scope.sorter = '-upvote'
+  $scope.color = 'red'
 
   $scope.toggleComments = function(post) {
     post.showCommentForm = !post.showCommentForm
@@ -38,5 +38,12 @@ app.controller('control', function($scope){
   $scope.addComment = function(post, comment){
     // post.comments.comment = $scope.comment;
     post.comments.push(comment)
+  }
+
+  $scope.addVote = function(post){
+    post.upvote = post.upvote + 1;
+  }
+  $scope.subtractVote = function(post){
+    post.upvote = post.upvote - 1;
   }
 })

@@ -15,8 +15,6 @@
 .newPost {
   display: flex;
   flex-direction: column;
-  /*margin-right: 70px;*/
-
 }
 
 .new {
@@ -51,12 +49,6 @@
   margin: .5%;
 }
 
-.title_author {
-  height: 10%;
-  width: 70%;
-  display: flex;
-  justify-content: space-between;
-}
 
 .postTitle {
   font-family: 'Archivo Narrow', sans-serif;
@@ -73,8 +65,11 @@
   width: 80%;
   display: flex;
   flex-direction: row;
-  float right
 }
 #hand {
   margin: 0.5%;
+}
+
+.description {
+  font-weight: bolder;
 }
