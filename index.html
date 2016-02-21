@@ -22,6 +22,7 @@
           <h1>Reddit Clone</h1>
         </div>
         <div class='pull-right'>
+          <input type="text" placeholder="Search" ng-model='finder.title'>
           <i class="fa fa-reddit-alien" ng-click='toggle()'>  Submit New Post</i>
         </div>
       </div>
@@ -43,7 +44,7 @@
 
       </div>
     </div>
-    <div class='post' ng-repeat="post in posts | orderBy:'-upvote'">
+    <div class='post' ng-repeat="post in posts | orderBy:'-upvote' | filter: finder">
       <img class='postPic' src="{{post.url}}" alt="">
       <div class='title_author'>
         <p class='postTitle'>

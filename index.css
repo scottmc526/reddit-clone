@@ -14,7 +14,7 @@
 .newPost {
   display: flex;
   flex-direction: column;
-  margin-right: 70px;
+  /*margin-right: 70px;*/
 
 }
 
@@ -35,6 +35,7 @@
 }
 
 .post {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   height: 30vh;
