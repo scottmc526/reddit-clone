@@ -40,13 +40,13 @@
       <div class='container'>
         <form name='form' ng-submit='submitPost()' class='newPost'>
           <label class='new'>Title</label>
-          <input class='newField' type="text" ng-required='true' ng-model='title' placeholder="Title">
+          <input class='newField' type="text" required ng-model='title' placeholder="Title">
           <label class='new'>Author</label>
-          <input class='newField' type="text" ng-required='true' ng-model='author' placeholder='Author'>
+          <input class='newField' type="text" required ng-model='author' placeholder='Author'>
           <label class='new'>Image URL</label>
-          <input class='newField' type="text" ng-required='true' ng-model='url' placeholder='Picture'>
+          <input class='newField' type="text" required ng-model='url' placeholder='Picture'>
           <label class='new'>Description</label>
-          <input class='newField' type="text" ng-required='true' ng-model='description' placeholder="Talk about it">
+          <input class='newField' type="text" required ng-model='description' placeholder="Talk about it">
           <button class='newField newButton' type=submit ng-click='toggle()' ng-disabled='form.$invalid'>Submit post</button>
 
         </form>
@@ -75,9 +75,7 @@
             <div ng-repeat='comment in post.comments'>
               <h3>Comments: </h3>
               <ul>
-                <li> {{comment}}</li>
-                <!-- <li> {{comment.date | date:'medium'}}</li> -->
-
+                <li> {{comment.name}} says {{comment.word}}</li>
               </ul>
 
             </div>
@@ -93,9 +91,9 @@
         </div>
       </div>
       <div ng-show='post.showCommentForm'>
-        <form ng-submit= 'addComment(post, comment)'>
-          <!-- <input type='text' ng-model='name' placeholder="Enter your name"> -->
-          <textarea ng-model='comment' rows="5" cols="20" placeholder='Enter comment'></textarea>
+        <form ng-submit= 'addComment(post, word, name)'>
+          <input type='text' ng-model='name' placeholder="Enter your name">
+          <textarea ng-model='word' rows="5" cols="20" placeholder='Enter comment'></textarea>
           <input type='submit' ng-click='toggleComments(post)' value='submit comment'>
         </form>
       </div>

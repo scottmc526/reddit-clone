@@ -35,10 +35,12 @@ app.controller('control', function($scope){
   $scope.toggle = function(){
     $scope.showForm = !$scope.showForm
   }
-  $scope.addComment = function(post, comment, time){
-    // post.comments.date = Date.now()
-    // post.comments.comment
+  $scope.addComment = function(post, word, name){
+    var comment = {};
+    comment.name = name;
+    comment.word = word;
     post.comments.push(comment)
+    console.log('hitting');
 
   }
 
@@ -59,7 +61,6 @@ app.controller('control', function($scope){
   }
   $scope.sorter = function(post){
     var value =  document.getElementById('sorts').value
-    console.log(value);
     if (value === 'upvote' || value === 'title' || value === 'date'){
       return 'sorts'
     } else {
