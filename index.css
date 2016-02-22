@@ -101,3 +101,12 @@
   transition: 2s;
   opacity: 1;
 }
+.zero {
+  color: black;
+}
+.neg-points {
+  color: red;
+}
+.upvote {
+  color: green;
+}

@@ -56,7 +56,7 @@
         </div>
         <div class='col-md-8'>
             <p class='postTitle'>
-              {{post.title }} | <span style='color:{{color}}'>{{post.upvote | number}} </span>
+              {{post.title }} | <span ng-class="(changeColor(post))">{{post.upvote | number}} </span>
               <i ng-click='addVote(post)' id='hand' class="fa fa-hand-o-up"></i>
               <i ng-click='subtractVote(post)' id='hand' class="fa fa-hand-o-down"></i>
             </p>
@@ -67,6 +67,7 @@
             <div ng-repeat='comment in post.comments'>
               <ul>
                 <li> {{comment}}</li>
+                <!-- <li> {{comment.date | date:'medium'}}</li> -->
 
               </ul>
 
