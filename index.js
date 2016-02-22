@@ -5,6 +5,7 @@ app.controller('control', function($scope){
   $scope.showForm = false;
   $scope.posts = [];
   $scope.color;
+  $scope.numComments = '0';
 
   $scope.toggleComments = function(post) {
     post.showCommentForm = !post.showCommentForm
@@ -40,6 +41,11 @@ app.controller('control', function($scope){
     comment.name = name;
     comment.word = word;
     post.comments.push(comment)
+    if (this.post.comments.length > 1) {
+      this.numComments = this.post.comments.length +' comments'
+    } else if (this.post.comments.length === 1) {
+      this.numComments = '1 comment'
+    }
 }
 
   $scope.addVote = function(post){

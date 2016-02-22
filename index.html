@@ -31,7 +31,7 @@
           </select>
         </div>
         <div class='pull-right'>
-          <input type="text" placeholder="Search by post title" ng-model='finder.$'>
+          <input type="text" placeholder="Search" ng-model='finder.$'>
           <i class="fa fa-reddit-alien" ng-click='toggle()'>  Submit New Post</i>
         </div>
       </div>
@@ -73,7 +73,7 @@
           </p>
           <div ng-show='post.showComments'>
             <div ng-repeat='comment in post.comments'>
-              <h3>Comments: </h3>
+              <!-- <h3>Comments: </h3> -->
               <ul>
                 <li> {{comment.name}} says {{comment.word}}</li>
               </ul>
@@ -86,7 +86,7 @@
             By: {{post.author}}
           </p>
         <div class="date_upvote">
-          <i id='hand' ng-click='newComment(post, comment)' class="fa fa-comment"></i>
+          <i id='hand' ng-click='newComment(post, comment)' class="fa fa-comment">{{numComments}}</i>
           <i ng-click='toggleComments(post)' id='hand' class="fa fa-pencil"></i>
         </div>
       </div>
