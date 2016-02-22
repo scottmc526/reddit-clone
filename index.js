@@ -57,4 +57,7 @@ app.controller('control', function($scope){
       return  'zero'
     }
   }
+  $scope.find = function(post) {
+    return $sc
+  }
 })
