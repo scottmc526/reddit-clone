@@ -35,29 +35,26 @@ app.controller('control', function($scope){
   $scope.toggle = function(){
     $scope.showForm = !$scope.showForm
   }
-  $scope.addComment = function(post, comment){
-    // post.comments.comment = $scope.comment;
+  $scope.addComment = function(post, comment, time){
+    // post.comments.date = Date.now()
+    // post.comments.comment
     post.comments.push(comment)
+
   }
 
   $scope.addVote = function(post){
     post.upvote = post.upvote + 1;
-    if (post.upvote > 0){
-      $scope.color = 'green'
-    } else if (post.upvote < 0){
-      $scope.color = 'red'
-    } else {
-     $scope.color = 'black'
-    }
   }
   $scope.subtractVote = function(post){
     post.upvote = post.upvote - 1;
-    if (post.upvote > 0){
-      $scope.color = 'green'
-    } else if (post.upvote < 0){
-      $scope.color = 'red'
+  }
+  $scope.changeColor = function(post) {
+    if (post.upvote > 0) {
+      return 'upvote'
+    } else if (post.upvote < 0 ){
+      return 'neg-points';
     } else {
-     $scope.color = 'black'
+      return  'zero'
     }
   }
 })
