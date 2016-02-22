@@ -16,7 +16,7 @@ app.controller('control', function($scope){
   $scope.submitPost = function(){
     var post = {};
     post.comments = []
-    post.date = moment().subtract(3, 'days').calendar();
+    post.date = moment().calendar();
     post.upvote = 0
     post.title = $scope.title;
     post.author = $scope.author;
@@ -57,7 +57,14 @@ app.controller('control', function($scope){
       return  'zero'
     }
   }
-  $scope.find = function(post) {
-    return $sc
+  $scope.sorter = function(post){
+    var value =  document.getElementById('sorts').value
+    console.log(value);
+    if (value === 'upvote' || value === 'title' || value === 'date'){
+      return 'sorts'
+    } else {
+      return '-upvote'
+    }
+
   }
 })

@@ -23,6 +23,12 @@
       <div class='container'>
         <div class='pull-left'>
           <h1>Reddit Clone</h1>
+          <label>Sort posts by:</label>
+          <select id='sorts' ng-model='sorts'>
+            <option value='-upvote'>Upvote</option>
+            <option value='title'>Title</option>
+            <option value='date'>Date</option>
+          </select>
         </div>
         <div class='pull-right'>
           <input type="text" placeholder="Search by post title" ng-model='finder.$'>
@@ -47,7 +53,7 @@
 
       </div>
     </div>
-    <div class='post' ng-repeat="post in posts | orderBy:'-upvote' | filter: finder">
+    <div class='post' ng-repeat="post in posts | orderBy:sorter(post)| filter: finder">
       <div class='container'>
 
         <div class='col-md-2'>
