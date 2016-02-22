@@ -3,7 +3,6 @@
   width: 100vw;
   background-color: #cee3f8;
 }
-
 .nav h1 {
   font-family: 'Archivo Narrow', sans-serif;
 }
@@ -41,6 +40,10 @@
   height: 30vh;
   width: 98vw;
   margin: 1%;
+  background-color: #cee3f8;
+  border: 2px solid #ff4500;
+  border-radius: 3px;
+  overflow: scroll;
 }
 
 .postPic {
@@ -75,22 +78,26 @@
 }
 
 .post.ng-enter {
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 2s;
+  transition: 2s;
   opacity: 0;
 }
 
 .post.ng-enter-active {
+  -webkit-transition: 2s;
+  transition: 2s;
   opacity: 1;
 }
 
 .post.ng-leave {
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 2s;
+  transition: 2s;
 
   opacity: 0;
 }
 
 .post.ng-leave-active {
+  -webkit-transition: 2s;
+  transition: 2s;
   opacity: 1;
 }
