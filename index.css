@@ -37,13 +37,13 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  height: 30vh;
+  height: auto;
+  min-height: 30vh;
   width: 98vw;
   margin: 1%;
   background-color: #cee3f8;
   border: 2px solid #ff4500;
   border-radius: 3px;
-  overflow: scroll;
 }
 
 .postPic {
