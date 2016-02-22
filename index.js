@@ -40,9 +40,7 @@ app.controller('control', function($scope){
     comment.name = name;
     comment.word = word;
     post.comments.push(comment)
-    console.log('hitting');
-
-  }
+}
 
   $scope.addVote = function(post){
     post.upvote = post.upvote + 1;
@@ -61,7 +59,7 @@ app.controller('control', function($scope){
   }
   $scope.sorter = function(post){
     var value =  document.getElementById('sorts').value
-    if (value === 'upvote' || value === 'title' || value === 'date'){
+    if (value === '-upvote' || value === 'title' || value === 'date'){
       return 'sorts'
     } else {
       return '-upvote'
