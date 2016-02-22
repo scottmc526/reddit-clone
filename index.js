@@ -16,7 +16,7 @@ app.controller('control', function($scope){
   $scope.submitPost = function(){
     var post = {};
     post.comments = []
-    post.date = Date.now()
+    post.date = moment().subtract(3, 'days').calendar();
     post.upvote = 0
     post.title = $scope.title;
     post.author = $scope.author;
