@@ -1,6 +1,7 @@
 
 
 var app = angular.module('scott', ['ngAnimate']);
+
 app.controller('control', function($scope){
   $scope.showForm = false;
   $scope.posts = [];

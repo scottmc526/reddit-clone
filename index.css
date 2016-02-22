@@ -110,3 +110,9 @@
 .upvote {
   color: green;
 }
+
+.searchBox {
+  border: 1px solid grey;
+  border-radius: 3px;
+  margin-right: 10px;
+}

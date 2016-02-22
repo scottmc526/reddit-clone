@@ -24,14 +24,14 @@
         <div class='pull-left'>
           <h1>Reddit Clone</h1>
           <label>Sort posts by:</label>
-          <select id='sorts' ng-model='sorts'>
+          <select ng-model='sorts'>
             <option value='-upvote'>Upvote</option>
             <option value='title'>Title</option>
             <option value='date'>Date</option>
           </select>
         </div>
         <div class='pull-right'>
-          <input type="text" placeholder="Search" ng-model='finder.$'>
+          <input class='searchBox' type="text" placeholder="Search" ng-model='finder.$'>
           <i class="fa fa-reddit-alien" ng-click='toggle()'>  Submit New Post</i>
         </div>
       </div>
