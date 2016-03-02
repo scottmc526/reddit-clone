@@ -1,7 +1,7 @@
-app.factory('piratesService', function ($http) {
+app.factory('redditService', function ($http) {
   return {
     all: function() {
-      return $http.get('/api/pirates').then(function (response) {
+      return $http.get('/posts').then(function (response) {
         return response.data;
       })
     }

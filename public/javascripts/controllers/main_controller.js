@@ -1,15 +1,12 @@
-app.controller('control', function($scope){
+app.controller('control', [$scope, redditService, function($scope, redditService){
   $scope.showForm = false;
   $scope.posts = [];
   $scope.color;
   $scope.numComments = '0';
 
-  // app.controller('piratesController', ['$scope', 'piratesService', function($scope, piratesService){
-  // piratesService.all().then(function(pirates) {
-  //     $scope.pirates = pirates;
-  //     console.log($scope.pirates.pirates);
-  //   })
-  // }])
+redditService.all().then(function(response) {
+      $scope.seedPosts = response;
+      console.log($scope.seedPosts);
 
   $scope.toggleComments = function(post) {
     post.showCommentForm = !post.showCommentForm
@@ -77,4 +74,4 @@ app.controller('control', function($scope){
     }
 
   }
-})
+}])
