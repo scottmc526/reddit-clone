@@ -37,6 +37,7 @@ app.controller('control', function($scope){
   $scope.toggle = function(){
     $scope.showForm = !$scope.showForm
   }
+
   $scope.addComment = function(post, word, name){
     var comment = {};
     comment.name = name;
@@ -47,7 +48,7 @@ app.controller('control', function($scope){
     } else if (this.post.comments.length === 1) {
       this.numComments = '1 comment'
     }
-}
+  }
 
   $scope.addVote = function(post){
     post.upvote = post.upvote + 1;
