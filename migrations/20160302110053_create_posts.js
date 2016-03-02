@@ -6,6 +6,9 @@ exports.up = function(knex, Promise) {
     t.string('author');
     t.text('url');
     t.text('description');
+    t.integer('upvote');
+    t.string('date');
+
   })
 };
 
