@@ -10,7 +10,6 @@
     <link rel='stylesheet' href='index.css'>
     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js'>
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src='index.js'></script>
     <script src='https://code.angularjs.org/1.5.0/angular-animate.min.js'></script>
@@ -62,7 +61,7 @@
             {{post.date}}
           </p>
         </div>
-        <div class='col-md-8'>
+        <div class='col-md-10'>
             <p class='postTitle'>
               {{post.title }} | <span ng-class="(changeColor(post))">{{post.upvote | number}} </span>
               <i ng-click='addVote(post)' id='hand' class="fa fa-hand-o-up"></i>
@@ -71,30 +70,29 @@
           <p class='description'>
             {{post.description}}
           </p>
+          <p>
+            By: {{post.author}}
+          </p>
           <div ng-show='post.showComments'>
             <div ng-repeat='comment in post.comments'>
-              <!-- <h3>Comments: </h3> -->
               <ul>
                 <li> {{comment.name}} says {{comment.word}}</li>
               </ul>
 
             </div>
           </div>
+          <div class="date_upvote">
+            <i id='hand' ng-click='newComment(post, comment)' class="fa fa-comment">{{numComments}}</i>
+            <i ng-click='toggleComments(post)' id='hand' class="fa fa-pencil">Post Comment</i>
+          </div>
         </div>
-      <div class='col-md-2'>
-          <p>
-            By: {{post.author}}
-          </p>
-        <div class="date_upvote">
-          <i id='hand' ng-click='newComment(post, comment)' class="fa fa-comment">{{numComments}}</i>
-          <i ng-click='toggleComments(post)' id='hand' class="fa fa-pencil"></i>
-        </div>
-      </div>
       <div ng-show='post.showCommentForm'>
         <form ng-submit= 'addComment(post, word, name)'>
-          <input type='text' ng-model='name' placeholder="Enter your name">
-          <textarea ng-model='word' rows="5" cols="20" placeholder='Enter comment'></textarea>
-          <input type='submit' ng-click='toggleComments(post)' value='submit comment'>
+          <input class='form-control' type='text' ng-model='name' placeholder="Enter your name">
+          <br>
+          <input class='form-control' ng-model='word' placeholder='Enter comment'>
+          <br>
+          <button type='submit' class='btn btn-primary' ng-click='toggleComments(post)'>Submit Comment</button>
         </form>
       </div>
       </div>
