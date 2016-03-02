@@ -4,6 +4,13 @@ app.controller('control', function($scope){
   $scope.color;
   $scope.numComments = '0';
 
+  // app.controller('piratesController', ['$scope', 'piratesService', function($scope, piratesService){
+  // piratesService.all().then(function(pirates) {
+  //     $scope.pirates = pirates;
+  //     console.log($scope.pirates.pirates);
+  //   })
+  // }])
+
   $scope.toggleComments = function(post) {
     post.showCommentForm = !post.showCommentForm
   }
