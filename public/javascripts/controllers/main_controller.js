@@ -1,12 +1,13 @@
-app.controller('control', [$scope, redditService, function($scope, redditService){
+app.controller('control', ['$scope', 'redditService', function($scope, redditService){
   $scope.showForm = false;
   $scope.posts = [];
   $scope.color;
   $scope.numComments = '0';
 
-redditService.all().then(function(response) {
-      $scope.seedPosts = response;
-      console.log($scope.seedPosts);
+// redditService.all().then(function(response) {
+//       $scope.seedPosts = response;
+//       // console.log($scope.seedPosts);
+// })
 
   $scope.toggleComments = function(post) {
     post.showCommentForm = !post.showCommentForm

@@ -7,10 +7,9 @@ function Post(){
 }
 
 /* GET home page. */
-router.get('/posts', function(req, res, next) {
+router.get('/api/posts', function(req, res, next) {
   Post().select().then(function(result){
     res.json(200, {posts:result})
   })
-
 });
 module.exports = router;
